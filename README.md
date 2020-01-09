@@ -1,5 +1,5 @@
-# tf2.0
-    tensorflow 2.0 learning with practice
+# tensorflow 2.0
+    this repo is for learning how to use tensorflow 2.0 
 
 # 在windows系统上安装tensorflow 
 
@@ -27,12 +27,14 @@ Download and install the version 3.6 of Python (建议使用 3.6 的版本) for 
 
 	如果CuDNN 的版本不是7.6.0，在运行时可能会碰到下面的问题：
 
-    Loaded runtime CuDNN library: 7.4.1 but source was compiled with: 7.6.0.  CuDNN library major and minor version needs to match or have higher minor version in case of CuDNN 7.0 or later version. 
+    Loaded runtime CuDNN library: 7.4.1 but source was compiled with: 7.6.0.  
+    CuDNN library major and minor version needs to match or have higher minor version in case of CuDNN 7.0 or later version. 
 	
     去下面的地址下载正确的版本：
 	https://developer.nvidia.com/rdp/cudnn-archive
 	
-	只需要把下载后的压缩文件解压缩，分别将cuda/include、cuda/lib、cuda/bin三个目录中的内容拷贝到C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v10.0 对应的include、lib、bin目录下即可。
+	只需要把下载后的压缩文件解压缩，分别将cuda/include、cuda/lib、cuda/bin三个目录中的内容拷贝到
+    C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v10.0 对应的include、lib、bin目录下即可。
 
 
 ## 安装tensorflow-gpu：
