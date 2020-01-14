@@ -86,7 +86,6 @@ def show_layer_activation(model, test_im):
             channel_image /= channel_image.std()
             channel_image *= (64/255.0)
             channel_image += (128/255.0)
-            channel_image = np.clip(channel_image, 0, 255).astype('uint8')
             display_grid[col * size : (col + 1) * size,
                         row * size : (row + 1) * size] = channel_image
     scale = 1. / size
