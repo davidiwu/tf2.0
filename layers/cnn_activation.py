@@ -58,7 +58,7 @@ def train_the_model(train_image, train_label, test_image, test_label):
  
     history = model.fit(train_image, train_label, validation_data=(test_image, test_label), epochs=5, batch_size=32)
 
-    # plot_training_history(history)
+    plot_training_history(history)
 
     test_loss, test_acc = model.evaluate(test_image, test_label, verbose=0)
     print(f'evaulation results: loss: {test_loss}, with accuracy: {test_acc}')
