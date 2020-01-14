@@ -1,4 +1,5 @@
 import matplotlib.pyplot as plt
+import numpy as np
 
 def plot_training_history(history):
 
@@ -27,4 +28,28 @@ def plot_training_history(history):
     plt.ylabel('Accuracy')
     plt.legend()
 
+    plt.show()
+
+def plot_cnn_activation(cnn_activation, images_per_row=8):
+
+    n_features = cnn_activation.shape[-1]
+    size = cnn_activation.shape[1]
+    n_cols = n_features // images_per_row
+    display_grid = np.zeros((size * n_cols, images_per_row * size))
+
+    for col in range(n_cols):
+        for row in range(images_per_row):
+            channel_image = cnn_activation[0,:, :, col * images_per_row + row]
+            channel_image -= channel_image.mean()
+            channel_image /= (channel_image.std() + 1e-5)
+            channel_image *= (64/255.0)
+            channel_image += (128/255.0)
+            display_grid[col * size : (col + 1) * size,
+                        row * size : (row + 1) * size] = channel_image
+    scale = 1. / size
+    plt.figure(figsize=(scale * display_grid.shape[1],
+                        scale * display_grid.shape[0]))
+    plt.title('activation')
+    plt.grid(False)
+    plt.imshow(display_grid, aspect='auto', cmap='viridis')
     plt.show()
