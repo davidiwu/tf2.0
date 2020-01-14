@@ -52,7 +52,7 @@ def get_model():
 def train_embedding_model(padded_reviews, labels):
     model = get_model()
 
-    pred3 = model.predict(padded_reviews)
+    pred = model.predict(padded_reviews)
     embedding_layer = model.get_layer(index=0)
 
     el_output = embedding_layer.output
@@ -67,9 +67,13 @@ def train_embedding_model(padded_reviews, labels):
     return model, embedding_table
 
 
-def reverse_embedding(embedding_table):
+def reverse_embedding(input_word_embedding, embedding_table):
 
-    input_word_embedding = np.array([[-0.03867966,  0.01225551, -0.05507576, -0.01467555, -0.03268626, -0.01057478, -0.03672233, -0.02771262]])
+    input_shape = input_word_embedding.shape
+    table_shape = embedding_table.shape
+
+    assert len(input_shape) == len(table_shape) == 2
+    assert input_shape[1] == table_shape[1]
 
     embedding_table = tf.cast(embedding_table, dtype = tf.float64)
 
@@ -81,8 +85,9 @@ def reverse_embedding(embedding_table):
     softmax = tf.nn.softmax(matrix_multiple, axis=-1)
     print(softmax.shape)
 
-    argmax = tf.argmax(softmax, axis=-1)
-    print(argmax.numpy())
+    index_in_embedding_table = tf.argmax(softmax, axis=-1)
+ 
+    return index_in_embedding_table
 
 
 def reuse_embedding_result(model, padded_reviews):
@@ -100,6 +105,8 @@ if __name__ == "__main__":
 
     model, embedding_table = train_embedding_model(padded_reviews, labels)
 
-    reverse_embedding(embedding_table)
+    input_word_embedding = np.array([[-0.03867966,  0.01225551, -0.05507576, -0.01467555, -0.03268626, -0.01057478, -0.03672233, -0.02771262]])
+    index_in_embedding_table = reverse_embedding(input_word_embedding, embedding_table)
+    print(index_in_embedding_table.numpy())
 
     reuse_embedding_result(model, padded_reviews)
