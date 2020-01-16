@@ -2,3 +2,6 @@ algorithm/__pycache__/
 layers/__pycache__/
 bert/data/
 bert/__pycache__/
+image_*.png
+training_checkpoints/
+gan/dcgan.ipynb
