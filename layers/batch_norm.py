@@ -14,14 +14,17 @@ inputs = np.random.randint(100, size=(10, 5, 5))
 inputs = tf.cast(inputs, tf.float32)
 
 mean_before = tf.reduce_mean(inputs).numpy()
+std_before = tf.math.reduce_std(inputs).numpy()
 item_before = inputs[0][0][0].numpy()
 
 layer = tf.keras.layers.BatchNormalization()
 outputs = layer(inputs, training=True)
 
 mean_after = tf.reduce_mean(outputs).numpy()
+std_after = tf.math.reduce_std(outputs).numpy()
 item_after = outputs[0][0][0].numpy()
 
 print(f'inputs shape: {inputs.shape}, outputs shape: {outputs.shape}')
 print(f'inputs data mean, before batch_norm value is {mean_before}, after value is {mean_after}')
+print(f'inputs data std, before batch_norm value is {std_before}, after value is {std_after}')
 print(f'inputs first item, before batch_norm value is {item_before}, after value is {item_after}')
