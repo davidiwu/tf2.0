@@ -18,7 +18,7 @@
 
 ## 安装tensorflow 2.0 的 GPU 版本
 
-1. 安装CUDA 10.0:
+* 安装CUDA 10.0:
 
 	先检查自己CUDA版本：
 
@@ -28,7 +28,7 @@
 
 	下载安装好CUDA10.0后，有可能发现系统找不到了显卡，这时候重新安装显卡的驱动即可。
 
-2. 安装CuDNN 7.6.0:
+* 安装CuDNN 7.6.0:
 
 	如果CuDNN 的版本不是7.6.0，在运行时可能会碰到下面的问题：
 
@@ -42,11 +42,11 @@
 	然后只需要把下载后的压缩文件解压缩，分别将cuda/include、cuda/lib、cuda/bin三个目录中的内容拷贝到 C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v10.0 对应的include、lib、bin目录下即可。
 
 
-3. 安装tensorflow-gpu：
+* 安装tensorflow-gpu：
 
-	pip install --upgrade tensorflow-gpu
+		pip install --upgrade tensorflow-gpu
 
-4. 可能碰到的问题：
+* 可能碰到的问题：
 
 	安装Tensorflow–GPU版本时如果一直出现如下问题:
 
