@@ -1,22 +1,24 @@
-# tensorflow 2.0
+# About this repo:
     
-	this repo is for learning how to use tensorflow 2.0 
+* this repo is for learning how to use tensorflow 2.0 
+* each file demos a concept or a task, can run independently and produce results
+* demos here need can run on a modest PC with a GPU
 
-# 在windows系统上安装tensorflow 
+## 在windows系统上安装tensorflow 
 
-## 先检查以下前置条件是否满足：
+> ### 先检查以下前置条件是否满足：
 
-Check your Windows system, should be Windows 7 or later, and 64-bit operating systems.
+* Check your Windows system, should be Windows 7 or later, and 64-bit operating systems.
 
-    TensorFlow was built and tested on 64-bit laptop/desktop operating system.
+* TensorFlow was built and tested on 64-bit laptop/desktop operating system.
 
-Download and install the version 3.6 of Python (建议使用 3.6 的版本) for Windows.
+* Download and install the version 3.6 of Python (建议使用 3.6 的版本) for Windows.
 
-    Should select to download 64bit version of Python
+* Should use and download 64bit version of Python
 
-# 安装tensorflow 2.0 的 GPU 版本
+## 安装tensorflow 2.0 的 GPU 版本
 
-## 安装CUDA 10.0:
+> ### 安装CUDA 10.0:
 
 先检查自己CUDA版本：
 
@@ -26,7 +28,7 @@ Download and install the version 3.6 of Python (建议使用 3.6 的版本) for 
 
 下载安装好CUDA10.0后，有可能发现系统找不到了显卡，这时候重新安装显卡的驱动即可。
 
-## 安装CuDNN 7.6.0:
+> ### 安装CuDNN 7.6.0:
 
 如果CuDNN 的版本不是7.6.0，在运行时可能会碰到下面的问题：
 
@@ -40,11 +42,11 @@ Download and install the version 3.6 of Python (建议使用 3.6 的版本) for 
 然后只需要把下载后的压缩文件解压缩，分别将cuda/include、cuda/lib、cuda/bin三个目录中的内容拷贝到 C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v10.0 对应的include、lib、bin目录下即可。
 
 
-## 安装tensorflow-gpu：
+> ### 安装tensorflow-gpu：
 
 	pip install --upgrade tensorflow-gpu
 
-## 可能碰到的问题：
+> ### 可能碰到的问题：
 
 安装Tensorflow–GPU版本时如果一直出现如下问题:
 
