@@ -2,7 +2,7 @@
     
 * this repo is for learning how to use tensorflow 2.0 
 * each file demos a concept or a task, can run independently and produce results
-* demos here need can run on a modest PC with a GPU
+* demos here can run on a modest PC with a GPU
 
 ## 在windows系统上安装tensorflow 
 
