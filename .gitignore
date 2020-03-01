@@ -6,3 +6,5 @@ bert/__pycache__/
 training_checkpoints/
 gan/dcgan.ipynb
 
+*.csv
+*.h5
